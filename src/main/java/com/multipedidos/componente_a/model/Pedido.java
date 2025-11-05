@@ -1,11 +1,11 @@
 package com.multipedidos.componente_a.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.JoinColumn;
 
 @Entity
 public class Pedido {
@@ -13,11 +13,11 @@ public class Pedido {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private Long clienteId;
-    private Double total;
-
+    
+    private String descripcion;
+    
     @ManyToOne
-    @JoinColumn(name = "clienteId", insertable = false, updatable = false)
+    @JoinColumn(name = "cliente_id")
     private Cliente cliente;
 
     // Getters y Setters
@@ -29,20 +29,12 @@ public class Pedido {
         this.id = id;
     }
 
-    public Long getClienteId() {
-        return clienteId;
+    public String getDescripcion() {
+        return descripcion;
     }
 
-    public void setClienteId(Long clienteId) {
-        this.clienteId = clienteId;
-    }
-
-    public Double getTotal() {
-        return total;
-    }
-
-    public void setTotal(Double total) {
-        this.total = total;
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
     }
 
     public Cliente getCliente() {

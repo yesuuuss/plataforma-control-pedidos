@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/clientes")  // Ruta base para este controlador
+@RequestMapping("/clientes")  
 public class ClienteController {
 
     @Autowired

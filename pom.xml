@@ -6,8 +6,8 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>3.5.7</version> <!-- Puedes ajustar esta versión si es necesario -->
-        <relativePath/> <!-- lookup parent from repository -->
+        <version>3.5.7</version>
+        <relativePath/>
     </parent>
 
     <groupId>com.multipedidos</groupId>
@@ -18,45 +18,32 @@
     <url/>
 
     <properties>
-        <java.version>17</java.version> <!-- O la versión de Java que estés utilizando -->
+        <java.version>17</java.version>
     </properties>
 
     <dependencies>
-        <!-- Dependencia de Spring Web -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
-        <!-- Dependencia de Spring Data JPA -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
         </dependency>
 
-        <!-- Dependencia de MariaDB JDBC Driver -->
         <dependency>
             <groupId>org.mariadb.jdbc</groupId>
             <artifactId>mariadb-java-client</artifactId>
             <scope>runtime</scope>
         </dependency>
 
-        <!-- Dependencia de Hibernate EntityManager (en caso de que sea necesario) -->
-        <dependency>
-            <groupId>org.hibernate</groupId>
-            <artifactId>hibernate-entitymanager</artifactId>
-            <version>5.6.5.Final</version> <!-- Usa la versión más reciente de Hibernate -->
-        </dependency>
-
-        <!-- Dependencia de Lombok (opcional, solo si quieres reducir el código de los getters y setters) -->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>1.18.22</version> <!-- Usa la versión más reciente de Lombok -->
-            <scope>provided</scope>
+            <optional>true</optional>
         </dependency>
 
-        <!-- Dependencia de Spring Boot para pruebas -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
@@ -66,21 +53,6 @@
 
     <build>
         <plugins>
-            <!-- Configuración para el plugin de compilación para usar Lombok -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <configuration>
-                    <annotationProcessorPaths>
-                        <path>
-                            <groupId>org.projectlombok</groupId>
-                            <artifactId>lombok</artifactId>
-                        </path>
-                    </annotationProcessorPaths>
-                </configuration>
-            </plugin>
-
-            <!-- Plugin para Spring Boot -->
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
@@ -95,5 +67,4 @@
             </plugin>
         </plugins>
     </build>
-
 </project>
