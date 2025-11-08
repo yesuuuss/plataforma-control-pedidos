@@ -7,7 +7,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @SpringBootApplication
 @EntityScan(basePackages = "com.multipedidos.componente_a.model")
-@EnableJpaRepositories(basePackages = "com.multipedidos.componente_a.repository")  // Asegúrate que los repositorios estén siendo escaneados
+@EnableJpaRepositories(basePackages = "com.multipedidos.componente_a.repository")  
 public class ComponenteAApplication {
 
     public static void main(String[] args) {

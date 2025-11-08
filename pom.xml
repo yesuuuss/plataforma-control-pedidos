@@ -49,7 +49,21 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
-    </dependencies>
+
+        <!-- ✅ SPRINGDOC DENTRO DE DEPENDENCIES -->
+        <dependency>
+            <groupId>org.springdoc</groupId>
+            <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+            <version>2.5.0</version>
+        </dependency>
+    </dependencies> <!-- ← CIERRA AQUÍ -->
+
+    <!-- ❌ ELIMINA ESTO: -->
+    <!-- <dependency>
+        <groupId>org.springdoc</groupId>
+        <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+        <version>2.5.0</version>
+    </dependency> -->
 
     <build>
         <plugins>
