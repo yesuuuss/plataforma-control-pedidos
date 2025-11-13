@@ -50,20 +50,20 @@
             <scope>test</scope>
         </dependency>
 
-        <!-- ✅ SPRINGDOC DENTRO DE DEPENDENCIES -->
+         <dependency>
+      <groupId>com.multipedidos</groupId>
+     <artifactId>common-library</artifactId>
+     <version>1.0.0</version>
+    </dependency>
+
         <dependency>
             <groupId>org.springdoc</groupId>
             <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
             <version>2.5.0</version>
         </dependency>
-    </dependencies> <!-- ← CIERRA AQUÍ -->
+    </dependencies> 
 
-    <!-- ❌ ELIMINA ESTO: -->
-    <!-- <dependency>
-        <groupId>org.springdoc</groupId>
-        <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
-        <version>2.5.0</version>
-    </dependency> -->
+   
 
     <build>
         <plugins>

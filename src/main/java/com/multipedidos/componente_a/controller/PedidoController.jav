@@ -32,4 +32,17 @@ public class PedidoController {
         return pedido.map(value -> new ResponseEntity<>(value, HttpStatus.OK))
                      .orElseGet(() -> new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }
+
+   
+    @PostMapping("/{id}/descuento")
+    public ResponseEntity<?> aplicarDescuento(
+        @PathVariable Long id, 
+        @RequestParam double porcentajeDescuento) {
+    try {
+        Pedido pedidoActualizado = pedidoService.aplicarDescuentoAPedido(id, porcentajeDescuento);
+        return ResponseEntity.ok(pedidoActualizado);
+    } catch (RuntimeException e) {
+        return ResponseEntity.badRequest().body(e.getMessage());
+    }
+}
 }
